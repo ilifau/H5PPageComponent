@@ -1,33 +1,54 @@
+# H5PPageComponent ILIAS Plugin
+
+Add H5P contents in page component editor
+
+This is an OpenSource project by studer + raimann ag, CH-Burgdorf (https://studer-raimann.ch)
+
+This project is licensed under the GPL-3.0-only license
+
+## Requirements
+
+* ILIAS 5.4.0 - 6.999
+* PHP >=7.0
+
 ## Installation
 
-First install and enable [H5P repository plugin](https://github.com/studer-raimann/H5P).
-
-### Install H5P page component plugin
-
 Start at your ILIAS root directory
+
 ```bash
 mkdir -p Customizing/global/plugins/Services/COPage/PageComponent
 cd Customizing/global/plugins/Services/COPage/PageComponent
 git clone https://github.com/studer-raimann/H5PPageComponent.git H5PPageComponent
 ```
-Update and activate the plugin in the ILIAS Plugin Administration
 
-### Some screenshots
-TODO
+Update, activate and config the plugin in the ILIAS Plugin Administration
 
-### Requirements
-* ILIAS 5.3 or ILIAS 5.4
-* PHP >=5.6
+## Description
 
-### Adjustment suggestions
-* Adjustment suggestions by pull requests
-* Adjustment suggestions which are not yet worked out in detail by Jira tasks under https://jira.studer-raimann.ch/projects/PLH5P
-* Bug reports under https://jira.studer-raimann.ch/projects/PLH5P
-* For external users you can report it at https://plugins.studer-raimann.ch/goto.php?target=uihk_srsu_PLH5P
+### Base plugin
 
-### ILIAS Plugin SLA
-Wir lieben und leben die Philosophie von Open Source Software! Die meisten unserer Entwicklungen, welche wir im Kundenauftrag oder in Eigenleistung entwickeln, stellen wir öffentlich allen Interessierten kostenlos unter https://github.com/studer-raimann zur Verfügung.
+First you need to install the [H5P](https://github.com/studer-raimann/H5P) plugin
 
-Setzen Sie eines unserer Plugins professionell ein? Sichern Sie sich mittels SLA die termingerechte Verfügbarkeit dieses Plugins auch für die kommenden ILIAS Versionen. Informieren Sie sich hierzu unter https://studer-raimann.ch/produkte/ilias-plugins/plugin-sla.
+You don't need to use the repository object, if you don't wish it
 
-Bitte beachten Sie, dass wir nur Institutionen, welche ein SLA abschliessen Unterstützung und Release-Pflege garantieren.
+### Page component editor
+
+You can add, edit or remove H5P contents in the page component editor
+
+You can also import H5P contents from .h5p files or export H5P contents to .h5p files
+
+Results of H5P contents are not available
+
+![Page](./doc/images/page.png)
+
+## Adjustment suggestions
+
+You can report bugs or suggestions at https://plugins.studer-raimann.ch/goto.php?target=uihk_srsu_PLH5P
+
+## ILIAS Plugin SLA
+
+We love and live the philosophy of Open Source Software! Most of our developments, which we develop on behalf of customers or on our own account, are publicly available free of charge to all interested parties at https://github.com/studer-raimann.
+
+Do you use one of our plugins professionally? Secure the timely availability of this plugin for the upcoming ILIAS versions via SLA. Please inform yourself under https://studer-raimann.ch/produkte/ilias-plugins/plugin-sla.
+
+Please note that we only guarantee support and release maintenance for institutions that sign a SLA.
