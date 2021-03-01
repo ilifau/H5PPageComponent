@@ -75,13 +75,19 @@ class ilH5PPageComponentPlugin extends ilPageComponentPlugin
 
         $h5p_content = self::h5p()->contents()->getContentById(intval($old_content_id));
 
-        $h5p_content_copy = self::h5p()->contents()->cloneContent($h5p_content);
+        // fau: fixH5pClone - prevent copy if content does not exist
+        if ($h5p_content !== null) {
 
-        self::h5p()->contents()->storeContent($h5p_content_copy);
+            $h5p_content_copy = self::h5p()->contents()->cloneContent($h5p_content);
 
-        self::h5p()->contents()->editor()->storageCore()->copyPackage($h5p_content_copy->getContentId(), $h5p_content->getContentId());
+            self::h5p()->contents()->storeContent($h5p_content_copy);
 
-        $properties["content_id"] = $h5p_content_copy->getContentId();
+            self::h5p()->contents()->editor()->storageCore()->copyPackage($h5p_content_copy->getContentId(),
+                $h5p_content->getContentId());
+
+            $properties["content_id"] = $h5p_content_copy->getContentId();
+        }
+        // fau.
 
         if (ilSession::get(ilH5PPlugin::PLUGIN_NAME . "_cut_old_content_id_" . $old_content_id)) {
             ilSession::clear(ilH5PPlugin::PLUGIN_NAME . "_cut_old_content_id_" . $old_content_id);
